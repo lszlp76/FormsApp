@@ -1,0 +1,31 @@
+@model IEnumerable<KursKayit>
+    <h2>Kurs Kayıtları</h2>
+    <a  class="form-controller" asp-controller="KursKayit" asp-action="Create">Kurs Kayıt</a>
+    <table class="table table-borderedr">
+        <thead>
+            <tr>
+            <th style="width:150px;">@Html.DisplayNameFor(m => m.KayitId)</th>
+            <th>@Html.DisplayNameFor(m => m.Ogrenci.OgrenciAd)</th>
+            <th>@Html.DisplayNameFor(m => m.Ogrenci.OgrenciSoyad)</th>
+            <th>@Html.DisplayNameFor(m => m.Kurs.Baslik)</th>
+            <th>@Html.DisplayNameFor(m => m.KayitTarihi)</th></tr>
+        </thead>
+<tbody>
+@foreach (var item in Model){
+
+    <tr>
+<td>@Html.DisplayFor(modelItem => item.KayitId)</td>
+<td>@Html.DisplayFor(modelItem => item.Ogrenci.OgrenciAd)</td>
+<td>@Html.DisplayFor(modelItem => item.Ogrenci.OgrenciSoyad)</td>
+<td>@Html.DisplayFor(modelItem => item.Kurs.Baslik)</td>
+<td>@Html.DisplayFor(modelItem => item.KayitTarihi)</td>
+<td><a asp-controller="KursKayit" asp-action="Edit" asp-route-id ="@item.KayitId" class="btn btn-primary">Edit</a>
+    <a asp-controller="KursKayit" asp-action="Delete"  asp-route-id="@item.KayitId" class="btn btn-danger">Delete</a> </td>
+    </tr>
+}
+   
+</tbody>
+
+
+
+    </table>
