@@ -30,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS3Vycy9jcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ulasozalp/Desktop/aspnetbasics/efcoreApp/Views/Kurs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS3Vycy9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ulasozalp/Desktop/aspnetbasics/efcoreApp/Views/Kurs/edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS3Vycy9lZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

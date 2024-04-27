@@ -6,6 +6,7 @@ using efcoreApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using SQLitePCL;
 
 namespace efcoreApp.Controllers
 {
@@ -93,5 +94,33 @@ namespace efcoreApp.Controllers
             }
             return View(model);
         }
+
+        public IActionResult Delete(int? id)
+        {
+
+            var kurs = _context.Kurslar.Find(id);
+
+            return View(kurs);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete([FromForm] int id)
+        {
+            var kurs = await _context.Kurslar.FindAsync(id);
+            if (kurs == null)
+            {
+                return NotFound();
+            }
+            _context.Kurslar.Remove(kurs);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+
+
+
+        }
+
+
     }
+
+
 }
